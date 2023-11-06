@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue脚手架</title>
+</head>
+
+<body>
+    <!-- vue 脚手架的基本用法：就是一个命令行工具，允许通过执行命令的方式 快速生成vue项目基础架构
+        安装：npm i -g @vue/cli---在win+R->cmd 中安装.目前安装的版本是5.0.8
+     -->
+
+    <!-- 创建vue项目：在创建的时候要注意切换到D盘自己的项目文件下
+        //1. 基于 交互式命令行 的方式，创建新版vue项目,my-project表示项目名称 这个名称必须是英文
+        运行：vue create my-project
+        //2. 基于 图形化界面 的方式，创建新版vue项目,这种更加方便，可视化更强
+        运行：vue ui
+        //3.基于 2.x的旧模板。创建旧版vue项目
+        运行：npm i -g @vue/cli-init
+        vue init webpack my-project
+     -->
+
+    <!-- Vue脚手架 生成的项目结构分析--vue_proj_01
+        ①： .git
+        ②： node_modules(依赖包目录)
+        ③： public(静态资源目录)
+        ④： src(组件源代码目录)
+        ⑤： .gitignore
+        ⑥： babel.config.js
+        ⑦： package.json
+        ⑧： package-lock.json
+        ⑨：README.md
+     -->
+
+    <!-- vue脚手架的自定义配置
+        1.通过package.json配置项目---报错了，不推荐
+        例如："vue":{
+            "devServer":{
+                "port":8888,
+                "open":true
+            }
+        }
+
+        2.通过单独的配置文件 配置项目
+        步骤①：在项目的根目录中创建文件 vue.config.js
+        ②：在该文件中，进行自定义的配置
+        devServer:{
+            open:true,
+            port:8888,
+        }
+    -->
+</body>
+
+</html>

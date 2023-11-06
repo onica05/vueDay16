@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>element-ui的基本使用</title>
+</head>
+
+<body>
+    <!-- element-ui是一套为开发者、设计师和产品经理准备的基于 vue2.0 的桌面端组件库 
+        --也对应了创建vue项目时候的步骤
+        1.基于命令行的方式手动安装
+        步骤（全局导入）① ： 运行 npm i --legacy-peer-deps  element-plus -S
+        ②：导入相关资源 在main.js里面
+        //导入组件库
+        import ElementPlus from 'element-plus'
+        //导入组件相关样式
+       import 'element-plus/theme-chalk/index.css'
+        //配置vue组件
+        createApp(App).use(ElementUI)
+        
+        2.基于 图形化界面 的方式，创建新版vue项目,这种更加方便，可视化更强----会报错由于router或者是引入的elementui,不推荐
+        步骤①：运行 vue ui命令，打开图形界面--win+R--cmd--vue ui
+        ②：通过vue项目管理器，进入具体的项目配置面板
+        ③： 点击 插件 -> 添加插件, 进入插件查询面板
+        ④：搜索 vue-cli-plugin-element并安装
+        ⑤：配置插件，实现 按需导入 ，从而减少打包后的体积
+
+
+        3.按需引入
+        步骤①：运行 npm i --legacy-peer-deps  element-plus -S
+        ②：运行 npm install --legacy-peer-deps  -D unplugin-vue-components unplugin-auto-import  
+        ③：在vue.config.js中添加以下配置,同样也需要在main.js中引入element-plus 方法同上
+        const AutoImport = require('unplugin-auto-import/webpack')
+        const Components = require('unplugin-vue-components/webpack')
+        const {ElementPlusResolver} = require('unplugin-vue-components/resolvers')
+        module.export={
+                configureWebpack: {
+                resolve: {
+                alias: {
+                    Components: '@/components'
+                }
+                },
+            //配置webpack 自动按需引入element-plus
+                plugins: [
+                AutoImport({
+                    resolvers: [ElementPlusResolver({importStyle:false})],
+                }),
+                Components({
+                    resolvers: [ElementPlusResolver({importStyle:false})],
+                }),
+                ],
+            },
+        }
+        
+
+         
+    -->
+</body>
+
+</html>
